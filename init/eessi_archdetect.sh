@@ -122,6 +122,12 @@ cpupath(){
     echo "$best_arch_match"
 }
 
+gpupath(){
+    # Identify the best matching GPU architecture from a list of supported specifications for the GPUs
+    # Return the link to the best matching GPU architecture
+    local gpu_arch_spec=()
+}
+
 # Parse command line arguments
 USAGE="Usage: eessi_archdetect.sh [-h][-d] <action>"
 
@@ -139,5 +145,6 @@ ARGUMENT=${1:-none}
 
 case "$ARGUMENT" in
     "cpupath") cpupath; exit;;
+    "gpupath") gpupath; exit;;
     *) echo "$USAGE"; log "ERROR" "Missing <action> argument";;
 esac
